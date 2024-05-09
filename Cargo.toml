@@ -14,6 +14,7 @@ path = "src/main.rs"
 name = "t1"
 path = "src/t1_tcpstream.rs"
 
+# ---------------- HTTP ----------------------------------------------------------------
 [[bin]]
 name = "t2_client"
 path = "src/t2_httpsig_client.rs"
@@ -23,8 +24,36 @@ name = "t2_server"
 path = "src/t2_httpsig_server.rs"
 
 [[bin]]
-name = "t3_hyper"
-path = "src/t3_hyper.rs"
+name = "t3_hyper_http_client"
+path = "src/t3_hyper_http_client.rs"
+
+[[bin]]
+name = "t3_hyper_http_server"
+path = "src/t3_hyper_http_server.rs"
+
+[[bin]]
+name = "t4_hyper_http_hittpsig_server"
+path = "src/t4_hyper_http_hittpsig_server.rs"
+
+[[bin]]
+name = "t4_hyper_http_hittpsig_client"
+path = "src/t4_hyper_http_hittpsig_client.rs"
+
+# ---------------- HTTPS ----------------------------------------------------------------
+
+[[bin]]
+name = "t5_hyper_https_client"
+path = "src/t5_hyper_https_client.rs"
+
+[[bin]]
+name = "t5_hyper_tls_example_client"
+path = "src/t5_hyper_tls_example_client.rs"
+
+[[bin]]
+name = "t6_hyper_https_httpsig_server"
+path = "src/t6_hyper_https_httpsig_server.rs"
+
+
 
 [dependencies]
 http = { version = "1.1.0" }
@@ -36,3 +65,5 @@ tokio = { version = "1.37.0", default-features = false, features = ["full"] }
 hyper = {version = "1.3", features = ["full"] }
 pin-project-lite = "0.2.14"
 pretty_env_logger = "0.5.0"
+hyper-tls = "0.6.0"
+hyper-util = {version = "0.1.3", features = ["full"]}

@@ -64,6 +64,7 @@ async fn fetch_url(url: hyper::Uri) -> Result<()> {
     let authority = url.authority().unwrap().clone();
 
     let path = url.path();
+    println!("path = {}", path);
     let req = Request::builder()
         .uri(path)
         .header(hyper::header::HOST, authority.as_str())

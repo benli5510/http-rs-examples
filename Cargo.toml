@@ -16,8 +16,12 @@ path = "src/t1_tcpstream.rs"
 
 # ---------------- HTTP ----------------------------------------------------------------
 [[bin]]
-name = "t2_client"
+name = "t2_httpsig_client"
 path = "src/t2_httpsig_client.rs"
+
+[[bin]]
+name = "t2_httpsig_client_rsa"
+path = "src/t2_httpsig_client_rsa.rs"
 
 [[bin]]
 name = "t2_server"
@@ -42,6 +46,15 @@ path = "src/t4_hyper_http_hittpsig_client.rs"
 # ---------------- HTTPS ----------------------------------------------------------------
 
 [[bin]]
+name = "t5_1_rsa"
+path = "src/t5_1_rsa.rs"
+
+[[bin]]
+name = "t5_2_openssl"
+path = "src/t5_2_openssl.rs"
+
+
+[[bin]]
 name = "t5_hyper_https_client"
 path = "src/t5_hyper_https_client.rs"
 
@@ -50,8 +63,20 @@ name = "t5_hyper_tls_example_client"
 path = "src/t5_hyper_tls_example_client.rs"
 
 [[bin]]
-name = "t6_hyper_https_httpsig_server"
-path = "src/t6_hyper_https_httpsig_server.rs"
+name = "t5_hyper_https_httpsig_server"
+path = "src/t5_hyper_https_httpsig_server.rs"
+
+[[bin]]
+name = "t6_reqwest_client"
+path = "src/t6_reqwest_client.rs"
+
+[[bin]]
+name = "t6_reqwest_with_tls"
+path = "src/t6_reqwest_with_tls.rs"
+
+[[bin]]
+name = "t6_reqwest_test"
+path = "src/t6_reqwest_test.rs"
 
 
 
@@ -67,3 +92,18 @@ pin-project-lite = "0.2.14"
 pretty_env_logger = "0.5.0"
 hyper-tls = "0.6.0"
 hyper-util = {version = "0.1.3", features = ["full"]}
+rsa = {version = "0.9", features = ["default"]}
+rand = {version = "0.8"}
+openssl = "0.10"
+sfv = "0.9"
+sha2 = {version = "0.10", features = ["default"]}
+digest = {version = "0.10"}
+regex = {version = "1.10", features = ["default"]}
+hmac = {version = "0.12", features = ["std"]}
+hex-literal = "0.4"
+base64 = "0.22"
+reqwest = { version = "0.12", features = ["__rustls"]}  #, "default", "rustls-tls", "json"] } # reqwest with JSON parsing support
+futures = "0.3" # for our async / await blocks
+rustls = "0.22"
+webpki-roots = "0.26"
+pki-types = { package = "rustls-pki-types", version = "1", features = ["std"] }
